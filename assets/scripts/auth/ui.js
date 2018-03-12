@@ -1,61 +1,86 @@
 'use strict'
+
 const store = require('../store')
 
-const signUpSuccess = function () {
-  $('input').val('')
-  $('#signUpMessage').text('Signed up successfully')
-  $('#signUpMessage').css('color', 'green')
+const signUpSuccess = function (data) {
+  $('#message').text('Signed up Successfully!')
+  $('#message').css('background-color', 'green')
+  console.log(data)
+  // $('.modal-backdrop').css('display', 'none')
+  $('#signUp').hide()
 }
 
-const signUpFailure = function () {
-  $('input').val('')
-  $('#signUpMessage').text('Error on signing up')
-  $('#signUpMessage').css('color', 'red')
+const signUpFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on signing up!')
+  $('#message').css('background-color', 'red')
 }
 
 const signInSuccess = function (data) {
-  $('input').val('')
-  $('#signInMessage').text('Signed in successfully')
-  $('#signInMessage').css('color', 'green')
+  $('#message').text('Signed in Successfully!')
+  $('#message').css('color', 'white')
+  $('#message').css('background-color', 'green')
+  // $('#game-history').show()
+  // $('#start-over').show()
+  // $('#sign-out-button').show()
+  // // $('.Square').toggle(1000)
+  // $('#change-password-button').show()
+  // $('#signUp').hide()
+  // $('#signIn').hide()
+  // $('.modal-backdrop').css('display', 'none') // modal was created. need to hide
+  // $('#message').hide(1000)
+  // $('#sign-in-button').toggle()
+  // $('#sign-up-button').toggle()
   store.user = data.user
 }
 
-const signInFailure = function () {
-  $('#signInMessage').text('Error on signing in')
-  $('#signInMessage').css('color', 'red')
+const signInFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on signing in!')
+  $('#message').css('background-color', 'red')
 }
 
-const changePasswordSuccess = function () {
-  $('input').val('')
-  $('#changePwMessage').text('Changed password successfully')
-  $('#changePwMessage').css('color', 'green')
+const changePasswordSuccess = function (data) {
+  $('#message').show(1000)
+  $('#message').text('Change password Successfully!')
+  $('#message').css('background-color', 'green')
+  $('#changePassword').toggle()
+  // $('.modal-backdrop').css('display', 'none')
 }
 
-const changePasswordFailure = function () {
-  $('input').val('')
-  $('#changePwMessage').text('Error on changing password')
-  $('#changePwMessage').css('color', 'red')
+const changePasswordFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on changing password!')
+  $('#message').css('background-color', 'red')
 }
 
-const signOutSuccess = function () {
-  $('input').val('')
-  $('#signOutMessage').text('Sign out successfully')
-  $('#signOutMessage').css('color', 'red')
+const signOutSuccess = function (data) {
+  $('#message').text('Signed out Successfully!')
+  $('#message').css('background-color', 'green')
+  $('#message').hide(1000)
+  // $('#game-history').hide()
+  // $('#start-over').hide()
+  $('#sign-out-button').hide()
+  // $('.Square').toggle()
+  // $('#game-message').hide()
+  $('#change-password-button').hide()
+  $('#sign-in-button').toggle()
+  $('#sign-up-button').toggle()
 }
 
-const signOutFailure = function () {
-  $('input').val('')
-  $('#signOutMessage').text('Error on sign out.')
-  $('#signOutMessage').css('color', 'red')
+const signOutFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on signing out!')
+  $('#message').css('background-color', 'red')
 }
 
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure,
   changePasswordSuccess,
   changePasswordFailure,
+  signInFailure,
   signOutSuccess,
   signOutFailure
 }

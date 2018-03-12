@@ -7,10 +7,7 @@ const signUp = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
-    headers: {
-      contentType: 'application/json'
-    },
-    data // :data has to be the same as perimiter in this function
+    data
   })
 }
 
@@ -27,24 +24,25 @@ const signIn = function (data) {
 
 const changePassword = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/change-password/',
+    url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: data
   })
 }
 
-const signOut = function () {
+const signOut = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/sign-out/',
+    url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data: data
   })
 }
 
