@@ -21,8 +21,7 @@
          <div class="container-fluid">
 
          <button type="button" style="float: left" class="btn btn-warning log-out" data-toggle="modal" id="sign-out-button">SIGN OUT</button>
-         <button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#signUp" id="sign-up-button">SIGN UP</button>
-         <button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#signIn" id="sign-in-button">LOG IN</button>
+
 
          </div>
        </div>
@@ -30,51 +29,7 @@
 
 
 
-           <!-- MODAL: SIGN UP -->
-          <!-- <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-          <div class="modal-content">
-          <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
-          </div> -->
 
-          <!--  SIGN UP FORM-->
-          <!-- <div class="modal-body">
-          <form id="sign-up" class="auth">
-          <fieldset>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" value="Sign Up">
-          </fieldset>
-          </form>
-          </div>
-          </div>
-          </div>
-          </div> -->
-
-          <!-- MODAL: SIGN IN -->
-          <!-- <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-          <div class="modal-content">
-          <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
-          </div> -->
-          <!--  SIGN IN FORM-->
-          <!-- <div class="modal-body">
-          <form id="sign-in" class="auth">
-          <fieldset>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" value="Sign in">
-          </fieldset>
-          </form>
-          </div>
-          </div>
-          </div>
-          </div> -->
 
           <!--  MODAL: CHANGE PASSWORD -->
           <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -99,6 +54,7 @@
           </div>
 
 
+    <!--  DROPDOWN: SIGN-UP-->
     <body class="container-fluid">
       <nav>
         <ul class="navigation">
@@ -123,7 +79,7 @@
         </div>
         </li>
 
-
+        <!--  DROPDOWN: SIGN-IN -->
           <li class="dropdown sign-in"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN IN</a>
           <div class="dropdown-menu pull-right">
           <form id="sign-in">
@@ -132,22 +88,6 @@
           </label><br/>
 
           <label>PASSWORD
-          <input class="input-field" type = 'password' name='credentials[password]'>
-          </label>
-          <br/>
-          <input type="submit" name="submit" value="Sign in!">
-          </form>
-          </div>
-          </li>
-
-          <li class="dropdown change-password"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CHANGE PW</a>
-          <div class="dropdown-menu pull-right">
-          <form id="change-password">
-          <label>OLD PW
-          <input class="input-field" type="text" name='credentials[email]'>
-          </label><br/>
-
-          <label>NEW PW
           <input class="input-field" type = 'password' name='credentials[password]'>
           </label>
           <br/>
@@ -167,16 +107,17 @@
         <h1 id="message"></h1>
           <div class="row">
             <div class="col-sm-3" style="background-color:#E74C3C">
-              <h4>SOMETHING.....</h4>
+              <h3>MORE SOMETHING.....</h3>
 
             </div>
             <div class="col-sm-9" style="background-color:grey;">
-              <h4>SOMETHING.....</h4>
+              <button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#changePassword" id="change-password-button">CHANGE PW</button>
+              <h3>MORE SOMETHING.....</h3>
 
 
-              <button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#changePassword" id="change-password-button">CHANGE PASSWORD</button> -->
+
               <!-- Nav tabs
-      <!-- <ul class="nav nav-tabs" role="tablist">
+       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation"><a href="#create-tab" aria-controls="create-tab" role="tab" data-toggle="tab">CREATE</a></li>
         <li role="presentation"><a href="#update-tab" aria-controls="update-tab" role="tab" data-toggle="tab">UPDATE</a></li>
         <li role="presentation"><a href="#delete-tab" aria-controls="delete-tab" role="tab" data-toggle="tab">DELETE</a></li>
@@ -190,7 +131,7 @@
 
         <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-3" style="background-color:#DAF7A6;">
+            <div class="col-sm-3" style="background-color:#DAF7A6; height:500px">
               <div role="tabpanel" class="tab-pane" id="create-contractor">
                     <h4>CREATE NEW</h4>
                     <form id="new-contractor">
@@ -239,8 +180,8 @@
           </div>
 <center>
             </div>
-            <div class="col-sm-9" height="800px" style="background-color:white;">
-              <p>MORE SOMETHING...SOMETHING...SOMETHING.MORE SOMETHING...SOMETHING...SOMETHING.
+            <div class="col-sm-9" style="background-color:white; height:500px">
+              MORE SOMETHING...SOMETHING...SOMETHING.MORE SOMETHING...SOMETHING...SOMETHING.
                 MORE SOMETHING...SOMETHING...SOMETHING.MORE SOMETHING...SOMETHING...SOMETHING.
                 MORE SOMETHING...SOMETHING...SOMETHING.MORE SOMETHING...SOMETHING...SOMETHING.
                 MORE SOMETHING...SOMETHING...SOMETHING.MORE SOMETHING...SOMETHING...SOMETHING.
@@ -258,7 +199,7 @@
         </div>
 
 
-        <!-- <div class="result-container">
+         <!-- <div class="result-container">
       <div id="result-display"></div>
     </div> -->
 <br/>
