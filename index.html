@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Contractor Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,15 +11,152 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    <body class="container-fluid">
+      <nav>
+        <ul class="navigation">
+          <li class="dropdown sign-up"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN UP</a>
+            <div class="dropdown-menu pull-right">
+              <form id="sign-up">
+                <label>EMAIL
+                  <input class="input-field" type="text" name='credentials[email]'>
+                </label>
+                <label>PASSWORD
+                  <input class="input-field" type = 'password' name='credentials[password]'>
+                </label>
+                <label>PASSWORD CONFIRMATION
+                  <input class="input-field" type = 'password' name='credentials[password_confirmation]'>
+                </label>
+                <input type="submit" name="submit" value="Sign up!">
+              </form>
+            </div>
+          </li>
+          <li class="dropdown sign-in"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN IN</a>
+            <div class="dropdown-menu pull-right">
+              <form id="sign-in">
+                <label>
+                  EMAIL
+                  <input class="input-field" type="text" name='credentials[email]'>
+                </label><br/>
+                <label>
+                  PASSWORD
+                  <input class="input-field" type = 'password' name='credentials[password]'>
+                </label><br/>
+                <input type="submit" name="submit" value="Sign in!">
+              </form>
+            </div>
+          </li>
+          <li class="dropdown change-password"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CHANGE PASSWORD</a>
+            <div class="dropdown-menu pull-right">
+              <form id="change-password">
+                <label>Change Password</label>
+                <input class="input-field" type="password" name="passwords[old]" value="" placeholder="Old Password">
+                <input class="input-field" type="password" name="passwords[new]" value="" placeholder="New Password">
+                <input type="submit" name="submit" value="Change Password">
+              </form>
+            </div>
+          </li>
+          <li id="sign-out"><a href="#">SIGN OUT</a></li>
+        </ul>
+      </nav>
+
+
+
+        <div class="container-fluid">
+        <CENTER>  <h1>CONTRACTOR TRACKER</h1></CENTER>
+          <div class="row">
+            <div class="col-sm-3" style="background-color:seagreen;">
+              <h4>CONTRACTOR TRACKER</h4>
+
+            </div>
+            <div class="col-sm-9" style="background-color:black;">
+              <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation"><a href="#create-tab" aria-controls="create-tab" role="tab" data-toggle="tab">CREATE</a></li>
+        <li role="presentation"><a href="#update-tab" aria-controls="update-tab" role="tab" data-toggle="tab">UPDATE</a></li>
+        <li role="presentation"><a href="#delete-tab" aria-controls="delete-tab" role="tab" data-toggle="tab">DELETE</a></li>
+        <li role="presentation"><a href="#search-tab" aria-controls="search-tab" role="tab" data-toggle="tab">SEARCH</a></li>
+      </ul>
+            </div>
+          </div>
+        </div>
+
+<center>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-3" style="background-color:white;">
+              <div role="tabpanel" class="tab-pane" id="create-tab">
+                    <h4>Create New Contractor</h4>
+                    <form id="new-contractor">
+                      <input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name"><br/>
+                      <input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name"><br/>
+                      <input class="input-field" type="text" name='contractor[born_on]' placeholder="Date of Birth"><br/>
+                      <input class="input-field" type="text" name='contractor[gender]' placeholder="Gender"><br/>
+                      <input class="input-field" type="text" name='contractor[hired_dated]' placeholder="Hired Date"><br/>
+                      <input type="submit" name="submit" value="Create">
+                    </form>
+                  </div>
+
+<br/>
+
+                <h4>Update Contractor</h4>
+                <div>
+                    <form id="update-inv-price">
+                      <input class="input-field" type="text" name='id' placeholder="Contractor ID"><br/>
+                      <input class="input-field" type="text" name='first_name' placeholder="First Name"><br/>
+                      <input class="input-field" type="text" name='last_name' placeholder="Last Name"><br/>
+                      <input class="input-field" type="text" name='gender' placeholder="Gender"><br/>
+                      <input class="input-field" type="text" name='hired_date' placeholder="Hired Date"><br/>
+                      <input type="submit" name="submit" value="Update">
+                    </form>
+
+<br/>
+
+              <div role="tabpanel" class="tab-pane" id="search-tab">
+                <div>
+                  <div>
+                    <h4>Search Contractor</h4>
+                    <form class="search_input">
+                      <input class="input-field" type="text" name='id' placeholder="Contractor ID"><br/>
+                      <input class="input-field" type="text" name='product' placeholder="First Name"><br/>
+                      <input class="input-field" type="text" name='product' placeholder="Last Name"><br/>
+                      <input type="submit" name="submit" value="search">
+                    </form>
+
+<br/>
+
+                  <button id="all-contractors">Get All Contractors</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+<center>
+            </div>
+            <div class="col-sm-9" style="background-color:pink;">
+              <p>THIS RESULT WILL SHOW UP HERE.
+              THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+            THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+          THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+        THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+      THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+    THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+  THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+THIS RESULT WILL SHOW UP HERE.THIS RESULT WILL SHOW UP HERE.
+</p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="result-container">
+      <div id="result-display"></div>
+    </div> -->
+<br/>
+
+
     </body>
 </html>
