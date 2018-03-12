@@ -41,11 +41,11 @@ const signInFailure = function (error) {
 }
 
 const changePasswordSuccess = function (data) {
-  $('#message').show(1000)
+  $('#message').show(2000)
   $('#message').text('Change password Successfully!')
   $('#message').css('background-color', 'green')
-  $('#changePassword').toggle()
-  // $('.modal-backdrop').css('display', 'none')
+  // $('#changePassword').toggle()
+  $('.modal-backdrop').css('display', 'none')
 }
 
 const changePasswordFailure = function (error) {

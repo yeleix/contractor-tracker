@@ -106,38 +106,56 @@
         <div class="dropdown-menu pull-right">
         <form id="sign-up">
 
-            <label>EMAIL
-            <input class="input-field" type="text" name='credentials[email]'>
-            </label>
+        <label>EMAIL
+        <input class="input-field" type="text" name='credentials[email]'>
+        </label>
 
-            <label>PASSWORD
-            <input class="input-field" type = 'password' name='credentials[password]'>
-            </label>
+        <label>PASSWORD
+        <input class="input-field" type = 'password' name='credentials[password]'>
+        </label>
 
-            <label>PASSWORD CONFIRMATION
-            <input class="input-field" type = 'password' name='credentials[password_confirmation]'>
-            </label>
+        <label>PASSWORD CONFIRMATION
+        <input class="input-field" type = 'password' name='credentials[password_confirmation]'>
+        </label>
 
-            <input type="submit" name="submit" value="Sign up!">
+        <input type="submit" name="submit" value="sign up">
         </form>
         </div>
-          </li>
+        </li>
+
 
           <li class="dropdown sign-in"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN IN</a>
           <div class="dropdown-menu pull-right">
           <form id="sign-in">
+          <label>EMAIL
+          <input class="input-field" type="text" name='credentials[email]'>
+          </label><br/>
 
-            <label>EMAIL
-            <input class="input-field" type="text" name='credentials[email]'>
-            </label><br/>
-
-            <label>PASSWORD
-            <input class="input-field" type = 'password' name='credentials[password]'>
-            </label><br/>
-            <input type="submit" name="submit" value="Sign in!">
-            </form>
-            </div>
+          <label>PASSWORD
+          <input class="input-field" type = 'password' name='credentials[password]'>
+          </label>
+          <br/>
+          <input type="submit" name="submit" value="Sign in!">
+          </form>
+          </div>
           </li>
+
+          <li class="dropdown change-password"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CHANGE PW</a>
+          <div class="dropdown-menu pull-right">
+          <form id="change-password">
+          <label>OLD PW
+          <input class="input-field" type="text" name='credentials[email]'>
+          </label><br/>
+
+          <label>NEW PW
+          <input class="input-field" type = 'password' name='credentials[password]'>
+          </label>
+          <br/>
+          <input type="submit" name="submit" value="Sign in!">
+          </form>
+          </div>
+          </li>
+
 
           <li id="sign-out"><a href="#">SIGN OUT</a></li>
         </ul>
@@ -148,13 +166,16 @@
         <div class="container-fluid">
         <h1 id="message"></h1>
           <div class="row">
-            <div class="col-sm-3" style="background-color:#D7BDE2;">
+            <div class="col-sm-3" style="background-color:#E74C3C">
               <h4>SOMETHING.....</h4>
 
             </div>
             <div class="col-sm-9" style="background-color:grey;">
-              <button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#changePassword" id="change-password-button">CHANGE PASSWORD</button>
-              <!-- Nav tabs -->
+              <h4>SOMETHING.....</h4>
+
+
+              <button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#changePassword" id="change-password-button">CHANGE PASSWORD</button> -->
+              <!-- Nav tabs
       <!-- <ul class="nav nav-tabs" role="tablist">
         <li role="presentation"><a href="#create-tab" aria-controls="create-tab" role="tab" data-toggle="tab">CREATE</a></li>
         <li role="presentation"><a href="#update-tab" aria-controls="update-tab" role="tab" data-toggle="tab">UPDATE</a></li>
@@ -218,7 +239,7 @@
           </div>
 <center>
             </div>
-            <div class="col-sm-9" style="background-color:white;">
+            <div class="col-sm-9" height="800px" style="background-color:white;">
               <p>MORE SOMETHING...SOMETHING...SOMETHING.MORE SOMETHING...SOMETHING...SOMETHING.
                 MORE SOMETHING...SOMETHING...SOMETHING.MORE SOMETHING...SOMETHING...SOMETHING.
                 MORE SOMETHING...SOMETHING...SOMETHING.MORE SOMETHING...SOMETHING...SOMETHING.

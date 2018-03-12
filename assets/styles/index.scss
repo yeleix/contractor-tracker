@@ -3,12 +3,31 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 
 body {
-  background-color: #ffe4de;
+  background-color: #EBDFF0;
 }
 
 header {
   font-size: 30px;
   text-align: center;
+}
+//
+// [class*="col-"] {
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   background-color: #eee;
+//   background-color: rgba(86,61,124,.15);
+//   border: 1px solid #ddd;
+//   border: 1px solid rgba(86,61,124,.2);
+// }
+
+.col-sm-9 {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.col-sm-3 {
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
 .clearfix {
@@ -25,9 +44,7 @@ header {
   list-style: none;
   margin: 0;
   text-transform: bold;
-  background: lavender;
-  // opacity: 0.5;
-  // filter: alpha(opacity=50);
+  background: deepskyblue;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -35,17 +52,13 @@ header {
   display: flex;
   -webkit-flex-flow: row wrap;
   justify-content: flex-end;
-  //
-  // background-image:none;
-  // border-color:transparent;
-  // box-shadow:none;
 }
 
 .navigation a {
   text-decoration: bold;
   display: block;
   padding: 1em;
-  color: black;
+  color: white;
 }
 
 .navigation a:hover {
