@@ -1,8 +1,13 @@
 'use strict'
 
+// const getFormFields = require('../../../lib/get-form-fields')
+// const api = require('./api')
+// const ui = require('./ui')
+
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 
 // ON CREATE
 const onCreate = function (event) {
@@ -15,9 +20,9 @@ const onCreate = function (event) {
 
 // ON SHOW-ALL
 const onShowAll = function (event) {
-  console.log('hey')
   event.preventDefault()
   api.showAllContractors()
+    .then($('#result-container').empty())
     .then(ui.onShowAllSuccess)
     .catch(ui.onShowAllFailure)
 }
@@ -34,27 +39,31 @@ const getContractor = function (event) {
     .catch(ui.getContractorFailure)
 }
 
-// const onUpdate = function (event) {
-//   const data = getFormFields(this)
-//   console.log(data)
-//   event.preventDefault()
-//   store.data = data
-//
-// api.updateList(data)
-//   .then(() => api.showAll(event))
-//   .then($('.content').empty())
-//   .then(ui.onUpdateSuccess)
-//   .catch(ui.onUpdateFailure)
-// }
-//
+const onUpdate = function (event) {
+  const data = getFormFields(this)
+  console.log(data)
+  console.log(this)
+  event.preventDefault()
+  store.data = data
+
+  api.updateContractor(data)
+    // .then(() => api.showAll(event))
+    // .then($('#result-container').empty())
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onUpdateFailure)
+}
 //
 // ON DELETE
 const deleteContractor = (event) => {
   event.preventDefault()
+  // grab the `data-id` attribute
   const id = event.target.dataset.id
+  console.log(event.target.dataset)
+  console.log('this is id')
   api.deleteContractor(id)
-    .then(() => onShowAll(event))
-    .then(ui.onDeleteSuccess)
+    // .then(() => api.showAllContractors(event))
+    // .then($('#result-container').empty())
+    .then(ui.onDeleteSuccess) // after deleting a list, refetch all lists
     .catch(ui.onDeleteFailure)
 }
 
@@ -62,7 +71,9 @@ const addHandlers = () => {
   $('#new-contractor').on('submit', onCreate)
   $('#all-contractors').on('click', onShowAll)
   $('#search-contractor').on('submit', getContractor)
-  $('#remove-contractor').on('click', '.list-delete', deleteContractor)
+  $('#result-container').on('click', '.list-delete', deleteContractor)
+  // $('#remove-contractor').on('click', deleteContractor)
+  $('#update-contractor').on('submit', onUpdate)
   $('')
 }
 

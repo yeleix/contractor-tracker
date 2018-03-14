@@ -58,7 +58,7 @@ const getContractorFailure = () => {
 
 // DELETE
 const onDeleteSuccess = () => {
-  $('#result-display').text('Delete Successfully!')
+  $('#message').text('Delete Successfully!')
   $('#result-display').fadeIn(1000).delay(1000).fadeOut(300)
   $('.input-field').val('')
   $('#table-container').html('')

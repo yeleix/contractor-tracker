@@ -14,21 +14,10 @@
 
 
 
-      <!--navbar buttons-->
-     <body>
-      <!-- <nav class="navbar navbar-default">
-       <div class="container-fluid">
-         <div class="container-fluid">
 
-         <button type="button" style="float: left" class="btn btn-warning log-out" data-toggle="modal" id="sign-out-button">SIGN OUT</button>
-
-
-         </div>
-       </div>
-     </nav> -->
-
+<body>
 <!--  DROPDOWN: SIGN-UP-->
-<body class="container-fluid" id="firstPage">
+<body class="container-fluid">
 <nav>
 <ul class="navigation">
 <li class="dropdown sign-up"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN UP</a>
@@ -60,9 +49,8 @@
 </form>
 </div>
 </li>
-</body>
-
-
+</ul>
+</nav>
 
 
 
@@ -144,11 +132,11 @@
 <center>
 <h4>UPDATE</h4>
 <form id="update-contractor">
-<input class="input-field" type="number" name='id' placeholder="Contractor ID"><br/>
-<input class="input-field" type="text" name='first_name' placeholder="First Name"><br/>
-<input class="input-field" type="text" name='last_name' placeholder="Last Name"><br/>
-<input class="input-field" type="text" name='born_on' placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
-<input class="input-field" type="text" name='gender' placeholder="Gender"><br/>
+<input class="input-field" type="number" name='contractor[id]' placeholder="Contractor ID"><br/>
+<input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name"><br/>
+<input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name"><br/>
+<input class="input-field" type="text" name='contractor[born_on]' placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
+<input class="input-field" type="text" name='contractor[gender]' placeholder="Gender"><br/>
 <!-- <input class="input-field" type="text" name='hire_date' placeholder="Hired Date" onfocus="(this.type='date')" onblur="(this.type='text')"><br/> -->
 <input type="submit" name="submit" value="Update">
 </form>
@@ -189,4 +177,5 @@
     <div class="footer">
   <center><p>..........</p></center>
 </div>
+</body>
 </html>

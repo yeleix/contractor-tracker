@@ -41,15 +41,34 @@ const getContractor = function (id) {
 }
 
 //  JSON: update-contractor.sh
+// const updateContractor = function (data) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/contractors/' + data.contractors.id,
+//     method: 'PATCH',
+//     headers: {
+//       contentType: 'application/json',
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+
 const updateContractor = function (data) {
+  console.log(data)
+  console.log(data.contractor.id)
   return $.ajax({
-    url: config.apiOrigin + '/contractors/' + data.contractors.id,
+    url: config.apiOrigin + '/contractors/' + data.contractor.id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     },
     data
+    // data: {
+    //   'expiration_date': {
+    //     'date': date,
+    //     'item_name': item_name,
+    //     'category': category
   })
 }
 
