@@ -9,9 +9,12 @@ $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
   contractorsEvents.addHandlers()
-  $('#create').on('submit', contractorsEvents.onCreate)
-  $('#create').on('submit', function () {
-  })
+  $('#sign-out').hide()
+  $('#side-forms').hide()
+  $('#result-container').hide()
+  $('#change-password-button').hide()
+  $('.sign-up').show()
+  $('.sign-in').show()
 })
 
 // use require with a reference to bundle the file and use it in this file
