@@ -1,0 +1,16 @@
+<ul>
+{{#each lists as |contractor|}}
+
+
+ <!-- Developers, why are we using data-id and not just id? -->
+ <div>
+      <ul class="list-unstyled">
+      <li class="list-group-date" data-id="{{expiration_date.date}}">Contractor ID#: {{contractor.id}} </li>
+      <li class="list-group-item"> First Name : {{contractor.first_name}} </li>
+      <li class="list-group-item"> Last Name: {{contractor.last_name}} </li>
+      <li class="list-group-item"> Born On: {{contractor.born_on}} </li>
+      <li class="list-group-item"> Gender: {{contractor.gender}} </li>
+      <!-- <li class="list-group-item"> Hire Date: {{contractor.hire_date}} </li> -->
+</div>
+{{/each}}
+</ul>
