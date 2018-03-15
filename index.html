@@ -87,16 +87,16 @@
 
 
 <div class="container-fluid">
-<h3 id="message"></h3>
+<h3>CONTRACTOR</h3>
 <div class="row">
 <div class="col-sm-3" style="background-color:#689980; height:50px">
-<h3>SIDE SOMETHING</h3>
+<h4 id="message"></h4>
 </div>
 
 <div class="col-sm-9" style="background-color:#72a9ad; height:50px">
 <!-- <button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" id="sign-out-button">SIGN OUT</button> -->
 <button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#changePassword" id="change-password-button">CHANGE PW</button>
-<h3>MAIN SOMETHING...</h3>
+<h3></h3>
 
 
 
@@ -115,14 +115,17 @@
 <div class="row">
 <div class="col-sm-3" style="background-color:#b6a8b4; height:600px" id="side-forms">
 <div role="tabpanel" class="tab-pane" id="create-contractor">
-<center><h4>CREATE NEW</h4>
+<center>
+<h4>CREATE NEW</h4>
 <form id="new-contractor">
-<input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name"><br/>
-<input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name"><br/>
-<input class="input-field" type="text" name='contractor[born_on]' placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
-<input class="input-field" type="text" name='contractor[gender]' placeholder="Gender"><br/>
+<input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name" required /><br/>
+<input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name" required /><br/>
+<input class="input-field" type="text" name='contractor[born_on]' placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" required><br/>
+<LABEL FOR="R1">Male</LABEL><INPUT TYPE="Radio" ID="R1" Value="Male" name='contractor[gender]' required />
+<LABEL FOR="R2">Female</LABEL><INPUT TYPE="Radio" ID="R2" Value="Female" name='contractor[gender]' required /><br/>
+<!-- <input class="input-field" type="text" name='contractor[gender]' placeholder="Gender" required /><br/> -->
 <!-- <input class="input-field" type="text" name='contractor[hire_date]' placeholder="Hired Date" onfocus="(this.type='date')" onblur="(this.type='text')"><br/> -->
-<input type="submit" name="submit" value="Create">
+<input type="submit" name="submit" value="Create" />
 </form>
 
 <br/>
@@ -136,11 +139,13 @@
 <center>
 <h4>UPDATE</h4>
 <form id="update-contractor">
-<input class="input-field" type="number" name='contractor[id]' placeholder="Contractor ID"><br/>
-<input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name"><br/>
-<input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name"><br/>
-<input class="input-field" type="text" name='contractor[born_on]' placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
-<input class="input-field" type="text" name='contractor[gender]' placeholder="Gender"><br/>
+<input class="input-field" type="number" name='contractor[id]' placeholder="Contractor ID" required /><br/>
+<input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name" required /><br/>
+<input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name" required /><br/>
+<input class="input-field" type="text" name='contractor[born_on]' placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" required><br/>
+<LABEL FOR="R1">Male</LABEL><INPUT TYPE="Radio" ID="R1" Value="Male" name='contractor[gender]' required />
+<LABEL FOR="R2">Female</LABEL><INPUT TYPE="Radio" ID="R2" Value="Female" name='contractor[gender]' required /><br/>
+<!-- <input class="input-field" type="text" name='contractor[gender]' placeholder="Gender" required /><br/> -->
 <!-- <input class="input-field" type="text" name='hire_date' placeholder="Hired Date" onfocus="(this.type='date')" onblur="(this.type='text')"><br/> -->
 <input type="submit" name="submit" value="Update">
 </form>

@@ -32,7 +32,7 @@ const onShowAll = function (event) {
 const getContractor = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
-  console.log(data)
+  // console.log(data)
   api.getContractor(data.id)
     .then($('#result-container').empty())
     .then(ui.getContractorSuccess)
@@ -41,15 +41,15 @@ const getContractor = function (event) {
 
 const onUpdate = function (event) {
   const data = getFormFields(this)
-  console.log(data)
-  console.log(this)
+  // console.log(data)
+  // console.log(this)
   event.preventDefault()
   store.data = data
 
   api.updateContractor(data)
     // .then(() => api.showAll(event))
     // .then($('#result-container').empty())
-    .then(ui.onUpdateSuccess)
+    .then(ui.OnUpdateSuccess)
     .catch(ui.onUpdateFailure)
 }
 //
@@ -58,8 +58,8 @@ const deleteContractor = (event) => {
   event.preventDefault()
   // grab the `data-id` attribute
   const id = event.target.dataset.id
-  console.log(event.target.dataset)
-  console.log('this is id')
+  // console.log(event.target.dataset)
+  // console.log('this is id')
   api.deleteContractor(id)
     // .then(() => api.showAllContractors(event))
     // .then($('#result-container').empty())

@@ -7,13 +7,13 @@ const signUpSuccess = function (data) {
   $('#message').css('background-color', 'green')
   $('.input-field').val('')
 
-  console.log(data)
+  // console.log(data)
   // $('.modal-backdrop').css('display', 'none')
   // $('#signUp').hide()
 }
 
-const signUpFailure = function (error) {
-  console.error(error)
+const signUpFailure = function () {
+  // console.error(error)
   $('#message').text('Error on signing up!')
   $('#message').css('background-color', 'red')
 
@@ -24,7 +24,7 @@ const signInSuccess = function (data) {
   $('#message').text('Signed in Successfully!')
   $('#message').css('color', 'white')
   $('#message').css('background-color', 'green')
-  $('#message').hide(2000)
+  $('#message').fadeIn(1000).delay(1000).fadeOut(300)
   $('.sign-up').hide()
   $('.input-field').val('')
   $('#side-forms').show()
@@ -45,8 +45,8 @@ const signInSuccess = function (data) {
   store.user = data.user
 }
 
-const signInFailure = function (error) {
-  console.error(error)
+const signInFailure = function () {
+  // console.error(error)
   $('#message').text('Error on signing in!')
   $('#message').css('background-color', 'red')
   $('.input-field').val('')
@@ -55,14 +55,14 @@ const signInFailure = function (error) {
 const changePasswordSuccess = function (data) {
   $('#message').text('Change password Successfully!')
   $('#message').css('background-color', 'green')
-  $('#message').hide(2000)
+  $('#message').fadeIn(2000).delay(2000).fadeOut(3000)
   $('.input-field').val('')
   // $('#changePassword').toggle()
   $('.modal-backdrop').css('display', 'none')
 }
 
-const changePasswordFailure = function (error) {
-  console.error(error)
+const changePasswordFailure = function () {
+  // console.error(error)
   $('#message').text('Error on changing password!')
   $('#message').css('background-color', 'red')
   $('.input-field').val('')
@@ -80,8 +80,8 @@ const signOutSuccess = function (data) {
   $('#result-container').hide()
 }
 
-const signOutFailure = function (error) {
-  console.error(error)
+const signOutFailure = function () {
+  // console.error(error)
   $('#message').text('Error on signing out!')
   $('#message').css('background-color', 'red')
 }

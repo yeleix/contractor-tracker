@@ -6,11 +6,12 @@ const showlistTemplate = require('../templates/partial.handlebars')
 const onCreateSuccess = () => {
   $('#message').text('create Successfully!')
   $('#message').css('background-color', 'green')
-  $('#message').hide(2000)
+  $('#message').fadeIn(1000).delay(1000).fadeOut(300)
 }
 
 const onCreateFailure = () => {
   $('#message').text('Error!!')
+  $('#message').css('background-color', 'red')
   $('#message').fadeIn(1000).delay(1000).fadeOut(300)
   $('.input-field').val('')
 }
@@ -26,6 +27,7 @@ const onShowAllSuccess = (data) => {
 
 const onShowAllFailure = () => {
   $('#message').text('Error!!')
+  $('#message').css('background-color', 'red')
   $('#message').fadeIn(1000).delay(1000).fadeOut(300)
   $('.input-field').val('')
 }
@@ -39,6 +41,7 @@ const OnUpdateSuccess = () => {
 
 const onUpdateFailure = () => {
   $('#message').text('Update Unsuccessfully!! Invalid ID!')
+  $('#message').css('background-color', 'red')
   $('#message').fadeIn(1000).delay(1000).fadeOut(300)
   $('.input-field').val('')
 }
@@ -54,6 +57,7 @@ const getContractorSuccess = (data) => {
 
 const getContractorFailure = () => {
   $('#message').text('Invalid!')
+  $('#message').css('background-color', 'red')
   $('#message').fadeIn(1000).delay(1000).fadeOut(300)
   $('.input-field').val('')
 }
@@ -67,7 +71,8 @@ const onDeleteSuccess = () => {
 }
 
 const onDeleteFailure = () => {
-  $('#message').text('Delete Unsuccessfully!! Invalid ID!!')
+  $('#message').text('Delete Unsuccessfully! Invalid ID!!')
+  $('#message').css('background-color', 'red')
   $('#message').fadeIn(1000).delay(1000).fadeOut(300)
   $('.input-field').val('')
 }
