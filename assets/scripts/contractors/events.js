@@ -84,7 +84,7 @@ const addHandlers = () => {
   $('#result-container').on('click', '#list-delete', deleteContractor)
   // $('#remove-contractor').on('click', deleteContractor)
   $('#update-contractor').on('submit', onUpdate)
-  $('')
+  // $('#result-container').on('click', '#partial-delete', deleteContractor)
 }
 
 module.exports = {
