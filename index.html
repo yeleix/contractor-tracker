@@ -62,7 +62,7 @@
 
 
 <!--  MODAL: CHANGE PASSWORD -->
-<div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-header">
@@ -158,8 +158,12 @@
 <div>
 <center><h4>SEARCH</h4>
 <form class="search_input">
-<input class="input-field" type="number" name='id' placeholder="contractor ID"> <input type="submit" name="submit" value="search">
+<!-- <input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name"/><br/>
+<input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name" /><br/> -->
+<input class="input-field" type="number" name='id' placeholder="contractor ID">
+<input type="submit" name="submit" value="search">
 </form></center>
+
 
 
 
@@ -180,6 +184,7 @@
 </div>
 </div>
 </div>
+
 
 
     </body>

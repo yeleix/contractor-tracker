@@ -67,11 +67,21 @@ const deleteContractor = (event) => {
     .catch(ui.onDeleteFailure)
 }
 
+// const onSearch = function (event) {
+//   const data = getFormFields(event.target)
+//   event.preventDefault()
+//   // console.log(data)
+//   api.searchName()
+//     .then($('#result-container').empty())
+//     .then(ui.getContractorSuccess)
+//     .catch(ui.getContractorFailure)
+// }
+
 const addHandlers = () => {
   $('#new-contractor').on('submit', onCreate)
   $('#all-contractors').on('click', onShowAll)
   $('#search-contractor').on('submit', getContractor)
-  $('#result-container').on('click', '.list-delete', deleteContractor)
+  $('#result-container').on('click', '#list-delete', deleteContractor)
   // $('#remove-contractor').on('click', deleteContractor)
   $('#update-contractor').on('submit', onUpdate)
   $('')

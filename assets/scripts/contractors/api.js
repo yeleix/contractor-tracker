@@ -54,8 +54,8 @@ const getContractor = function (id) {
 // }
 
 const updateContractor = function (data) {
-  console.log(data)
-  console.log(data.contractor.id)
+  // console.log(data)
+  // console.log(data.contractor.id)
   return $.ajax({
     url: config.apiOrigin + '/contractors/' + data.contractor.id,
     method: 'PATCH',
@@ -74,10 +74,21 @@ const updateContractor = function (data) {
 
 //  JSON: delete-contractor.sh
 const deleteContractor = function (id) {
-  console.log(id)
+  // console.log(id)
   return $.ajax({
     url: config.apiOrigin + '/contractors/' + id,
     method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const searchName = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/contractors/',
+    method: 'GET',
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
@@ -90,5 +101,6 @@ module.exports = {
   showAllContractors,
   getContractor,
   updateContractor,
-  deleteContractor
+  deleteContractor,
+  searchName
 }

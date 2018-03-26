@@ -58,7 +58,8 @@ const changePasswordSuccess = function (data) {
   $('#message').fadeIn(2000).delay(2000).fadeOut(3000)
   $('.input-field').val('')
   // $('#changePassword').toggle()
-  $('.modal-backdrop').css('display', 'none')
+  $('#modal').modal('toggle')
+  // $('.modal-backdrop').css('display', 'none')
 }
 
 const changePasswordFailure = function () {
