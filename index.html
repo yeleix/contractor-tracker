@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Contractor Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+
+
+
+<body>
+
+
+<body class="container-fluid">
+<nav>
+<ul class="navigation">
+<!--  SIGN-OUT-->
+<li><form id="sign-out"><input type="submit" value="sign out"></form></li>
+
+<!--  DROPDOWN: SIGN-UP-->
+<li class="dropdown sign-up"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN UP</a>
+<div class="dropdown-menu pull-right">
+<form id="sign-up">
+
+<label>EMAIL<input class="input-field" type="text" name='credentials[email]'></label>
+<label>PASSWORD<input class="input-field" type = 'password' name='credentials[password]'></label>
+<label>PASSWORD CONFIRMATION<input class="input-field" type = 'password' name='credentials[password_confirmation]'></label>
+
+<input type="submit" name="submit" value="sign up">
+</form>
+</div>
+</li>
+
+<!--  DROPDOWN: SIGN-IN -->
+<li class="dropdown sign-in"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN IN</a>
+<div class="dropdown-menu pull-right">
+<form id="sign-in">
+<label>EMAIL
+<input class="input-field" type="text" name='credentials[email]'>
+</label><br/>
+
+<label>PASSWORD
+<input class="input-field" type = 'password' name='credentials[password]'>
+</label>
+<br/>
+<input type="submit" name="submit" value="Sign in!">
+</form>
+</div>
+</li>
+</ul>
+</center>
+</nav>
+
+
+
+
+<!--  MODAL: CHANGE PASSWORD -->
+<div class="modal" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="myModalLabel">CHANGE PASSWORD</h4>
+</div>
+<!--  CHANGE PASSWORD FORM-->
+<div class="modal-body">
+<form id="change-password" class="border">
+<fieldset>
+<input type="password" name="passwords[old]" placeholder="old password">
+<input type="password" name="passwords[new]" placeholder="new password">
+<input type="submit" value="change!">
+</fieldset>
+</form>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+
+
+<div class="container-fluid">
+<h3>CONTRACTOR</h3>
+<div class="row">
+<div class="col-sm-3" style="background-color:#689980; height:50px">
+<h4 id="message"></h4>
+</div>
+
+<div class="col-sm-9" style="background-color:#72a9ad; height:50px">
+<!-- <button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" id="sign-out-button">SIGN OUT</button> -->
+<button type="button" style="float: right" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#changePassword" id="change-password-button">CHANGE PW</button>
+<h3></h3>
+
+
+
+              <!-- Nav tabs
+       <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation"><a href="#create-tab" aria-controls="create-tab" role="tab" data-toggle="tab">CREATE</a></li>
+        <li role="presentation"><a href="#update-tab" aria-controls="update-tab" role="tab" data-toggle="tab">UPDATE</a></li>
+        <li role="presentation"><a href="#delete-tab" aria-controls="delete-tab" role="tab" data-toggle="tab">DELETE</a></li>
+        <li role="presentation"><a href="#search-tab" aria-controls="search-tab" role="tab" data-toggle="tab">SEARCH</a></li>
+      </ul> -->
+</div>
+</div>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-3" style="background-color:#b6a8b4; height:600px" id="side-forms">
+<div role="tabpanel" class="tab-pane" id="create-contractor">
+<center>
+<h4>CREATE NEW</h4>
+<form id="new-contractor">
+<input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name" required /><br/>
+<input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name" required /><br/>
+<input class="input-field" type="text" name='contractor[born_on]' placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" required><br/>
+<LABEL FOR="R1">Male</LABEL><INPUT TYPE="Radio" ID="R1" Value="Male" name='contractor[gender]' required />
+<LABEL FOR="R2">Female</LABEL><INPUT TYPE="Radio" ID="R2" Value="Female" name='contractor[gender]' required /><br/>
+<!-- <input class="input-field" type="text" name='contractor[gender]' placeholder="Gender" required /><br/> -->
+<!-- <input class="input-field" type="text" name='contractor[hire_date]' placeholder="Hired Date" onfocus="(this.type='date')" onblur="(this.type='text')"><br/> -->
+<input type="submit" name="submit" value="Create" />
+</form>
+
+<br/>
+<br/>
+<button id="all-contractors">Get All Contractors</button></center>
+<center><p>The search for First Name/Last Name/DOB can be found here</p></center></div>
+
+<br/>
+
+<div>
+<center>
+<h4>UPDATE</h4>
+<form id="update-contractor">
+<input class="input-field" type="number" name='contractor[id]' placeholder="Contractor ID" required /><br/>
+<input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name" required /><br/>
+<input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name" required /><br/>
+<input class="input-field" type="text" name='contractor[born_on]' placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" required><br/>
+<LABEL FOR="R1">Male</LABEL><INPUT TYPE="Radio" ID="R1" Value="Male" name='contractor[gender]' required />
+<LABEL FOR="R2">Female</LABEL><INPUT TYPE="Radio" ID="R2" Value="Female" name='contractor[gender]' required /><br/>
+<!-- <input class="input-field" type="text" name='contractor[gender]' placeholder="Gender" required /><br/> -->
+<!-- <input class="input-field" type="text" name='hire_date' placeholder="Hired Date" onfocus="(this.type='date')" onblur="(this.type='text')"><br/> -->
+<input type="submit" name="submit" value="Update">
+</form>
+</center>
+
+<br/>
+
+<div role="tabpanel" class="tab-pane" id="search-contractor">
+<div>
+<div>
+<center><h4>SEARCH</h4>
+<form class="search_input">
+<!-- <input class="input-field" type="text" name='contractor[first_name]' placeholder="First Name"/><br/>
+<input class="input-field" type="text" name='contractor[last_name]' placeholder="Last Name" /><br/> -->
+<input class="input-field" type="number" name='id' placeholder="contractor ID">
+<input type="submit" name="submit" value="search"></form></center>
+<p><b>NOTE:</b> you can only search the ID# if you are the user that created the contractor.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-sm-9" style="background-color:#eeeeee; overflow-y:scroll; height:600px" id="result-container">
+
+</div>
+</div>
+</div>
+
+    </body>
+    <div class="footer">
+<p>..........</p>
+</div>
+</body>
+</html>
